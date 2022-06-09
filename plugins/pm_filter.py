@@ -399,12 +399,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
-            button = [
-                [
-                    InlineKeyboardButton('☺ 𝐉𝐨𝐢𝐧 𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 😊', url='https://t.me/megatronzrequest') 
-                    ]
-                ]
-        )
+            ) 
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
