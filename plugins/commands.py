@@ -137,10 +137,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', False),
-                    reply_markup = [ 
-                            ('☺Join Our Group', url='https://t.me/megatronzrequest') 
-                    ]
+                    protect_content=msg.get('protect', False), 
                     )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
@@ -149,10 +146,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    protect_content=msg.get('protect', False),
-                    reply_markup = [ 
-                            ('☺Join Our Group', url='https://t.me/megatronzrequest') 
-                    ]
+                    protect_content=msg.get('protect', False), 
                     )
             except Exception as e:
                 logger.warning(e, exc_info=True)
