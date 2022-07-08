@@ -715,12 +715,6 @@ async def auto_filter(client, msg, spoll=False):
 
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(600)
-
-            await hehe.delete()
-
-            await message.delete()
-
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
 
             pic = imdb.get('poster')
@@ -729,23 +723,11 @@ async def auto_filter(client, msg, spoll=False):
 
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-            await asyncio.sleep(600)
-
-            await hmm.delete()
-
-            await message.delete()
-
         except Exception as e:
 
             logger.exception(e)
 
             fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-
-            await asyncio.sleep(600)
-
-            await fek.delete()
-
-            await message.delete()
 
     else:
 
