@@ -135,7 +135,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase😢Please ask the admins.')
+            k = await query.message.edit('This Movie is Not Uploaded in My DataBase😢Please ask the Admins in this Format @admin (movie name).')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -707,7 +707,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b>Hey {message.from_user.mention}, Here is What I Found In My Database For Your Query {search}.</b>"
+        cap = f"<b>Hey {message.from_user.mention}😍,\nHere is What I Found In My Database For Your Query {search}.</b>"
 
     if imdb and imdb.get('poster'):
 
