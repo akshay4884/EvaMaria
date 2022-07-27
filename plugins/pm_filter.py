@@ -30,7 +30,7 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & ~filters.edited & filters.incoming)
+@Client.on_message((filters.group | filters.private) & filters.text & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
@@ -41,7 +41,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("{query.from_user.mention}മോനു അത് നിനക്കുള്ളതല്ല😊\n\n𝐒𝐞𝐚𝐫𝐜𝐡 𝐲𝐨𝐮𝐫 𝐨𝐰𝐧 𝐟𝐢𝐥𝐞𝐬, 𝐝𝐨𝐧'𝐭 𝐜𝐥𝐢𝐜𝐤 𝐨𝐧 𝐨𝐭𝐡𝐞𝐫𝐬 𝐫𝐞𝐬𝐮𝐥𝐭𝐬 👀", show_alert=True)
+        return await query.answer("{query.from_user.mention}മോനു ഇത് നിനക്കുള്ളതല്ല😊\n\n𝐒𝐞𝐚𝐫𝐜𝐡 𝐲𝐨𝐮𝐫 𝐨𝐰𝐧 𝐟𝐢𝐥𝐞𝐬, 𝐝𝐨𝐧'𝐭 𝐜𝐥𝐢𝐜𝐤 𝐨𝐧 𝐨𝐭𝐡𝐞𝐫𝐬 𝐫𝐞𝐬𝐮𝐥𝐭𝐬 👀", show_alert=True)
     try:
         offset = int(offset)
     except:
