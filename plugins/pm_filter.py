@@ -391,7 +391,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, file_id, rid = query.data.split("#")
 
         if int(rid) not in [query.from_user.id, 0]:
-            return await query.answer(UNAUTHORIZED_CALLBACK_TEXT, show_alert=True)
+            return await query.answer('OKDA', show_alert=True)
 
         files_ = await get_file_details(file_id)
         if not files_:
