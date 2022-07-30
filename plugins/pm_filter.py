@@ -729,7 +729,7 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
 
-        cap = f"<b>Hey {message.from_user.mention} ☺,\n\nHere is What I Found In My Database For Your Query {search}.\n\nᴛʜɪs ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 𝟻ᴍɪɴs,ᴅᴜᴇ ᴛᴏ #ᴄᴏᴘʏʀɪɢʜᴛ.</b>"
+        cap = f"<b>Hey {message.from_user.mention} ☺,\n\nHere is What I Found In My Database For Your Query {search}.</b>"
 
     if imdb and imdb.get('poster'):
 
